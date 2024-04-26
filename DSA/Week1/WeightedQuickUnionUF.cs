@@ -29,24 +29,16 @@ namespace DSA.Week1
         {
             int i = root(p);
             int j = root(q);
+            if (i == j) return;
+            Console.WriteLine($"Union({p},{q})");
             if (sz[i] > sz[j]) { 
                 id[j] = i; 
                 sz[i] += sz[j];
-                sz[j] = 0;
             }
             else { 
                 id[i] = j; 
                 sz[j] += sz[i];
-                sz[i] = 0;
             }
-
-            Console.WriteLine();
-            for(int g = 0; g < sz.Length; g++)
-            {
-                if (sz[g] == 0) continue;
-                Console.Write($" [{g},{sz[g]}] ");
-            }
-            Console.WriteLine();
         }
 
         public virtual int root(int child)
