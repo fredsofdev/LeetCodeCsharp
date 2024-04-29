@@ -20,6 +20,18 @@ namespace DSA.Week2.Sort
             }
         }
 
+        public static void sort(IComparable[] list, int lo, int hi)
+        {
+            for (int i = lo; i <= hi; i++)
+            {
+                for (int j = i; j > lo; j--)
+                {
+                    if (list[j].less(list[j - 1])) list.exch(j, j - 1);
+                    else break;
+                }
+            }
+        }
+
         public static void SortTest()
         {
             Console.WriteLine("Insertion Sort");
