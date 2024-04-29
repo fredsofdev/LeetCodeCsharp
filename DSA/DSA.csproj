@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Week2\Assignment\Point.cs~RF8c17d4.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Week3\" />
+  </ItemGroup>
+
 </Project>
