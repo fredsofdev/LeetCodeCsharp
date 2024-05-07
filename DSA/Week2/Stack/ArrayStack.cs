@@ -21,7 +21,7 @@ namespace DSA.Week2.Stack
 
         public string pop()
         {
-                                                   string value = array[N-1];
+            string value = array[N-1];
             array[--N] = null;
             return value;
         }

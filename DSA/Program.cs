@@ -66,5 +66,5 @@ Console.ReadLine();
 //StackClient.RunWithMax(); 
 //RandomizedQueue<int>.Run();
 //Shellsort.SortTest();
-Shuffle.ShuffleTest();
-//QueueClient.Run();
+//Shuffle.ShuffleTest();
+QueueClient.Run();

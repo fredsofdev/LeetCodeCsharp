@@ -10,8 +10,8 @@ namespace DSA.Week2.Queue
     {
         public static void Run()
         {
-            Console.WriteLine("Queue: - for dequeue");
-            IQueue<string> stack = new QueueWithTwoStacks();
+            Console.WriteLine("Linked List Queue: - for dequeue");
+            IQueue<string> stack = new LinkedListQueue();
             while (true)
             {
                 string? input = Console.ReadLine();
