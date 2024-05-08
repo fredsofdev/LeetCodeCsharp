@@ -6,6 +6,7 @@ using DSA.Week2.Queue;
 using DSA.Week2.Sort;
 using DSA.Week2.Stack;
 using DSA.Week3.Assignment;
+using DSA.Week3.Quicksort;
 /*
 Console.WriteLine("Unio Find Test");
 
@@ -70,5 +71,6 @@ Console.ReadLine();
 //Shuffle.ShuffleTest();
 //MergingWithHalfAux.Run();
 //CountingInversiont.Run();
-ShuffleLinkedList.Run();
+//QuickSort.Run();
+QuickSelect.Run();
 //QueueClient.Run();
