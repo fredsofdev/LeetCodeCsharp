@@ -25,24 +25,22 @@ namespace DSA.Week3.Assignment
             }
         }
 
-        private int Partition(int[] arr, int low, int high, int pivot)
+        private int Partition(int[] a, int lo, int hi, int pivot)
         {
-            int i = low;
-            for (int j = low; j < high; j++)
+            int i = lo, j = hi + 1;
+            while (true)
             {
-                if (arr[j] < pivot)
-                {
-                    Swap(arr, i, j);
-                    i++;
-                }
-                else if (arr[j] == pivot)
-                {
-                    Swap(arr, j, high);
-                    j--;
-                }
+                while (a[++i].less(pivot))
+                    if (i == hi) break;
+                while (a[lo].less(a[--j]))
+                    if (j == lo) break;
+
+                if (i >= j) break;
+                Swap(a, i, j);
             }
-            Swap(arr, i, high);
-            return i;
+
+            Swap(a, lo, j);
+            return j;
         }
 
         private void Swap(int[] arr, int i, int j)
