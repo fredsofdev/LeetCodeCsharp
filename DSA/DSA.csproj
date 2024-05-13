@@ -11,4 +11,8 @@
     <None Remove="Week2\Assignment\Point.cs~RF8c17d4.TMP" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Week4\" />
+  </ItemGroup>
+
 </Project>
