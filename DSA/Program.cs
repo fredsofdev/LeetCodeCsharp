@@ -7,6 +7,8 @@ using DSA.Week2.Sort;
 using DSA.Week2.Stack;
 using DSA.Week3.Assignment;
 using DSA.Week3.Quicksort;
+using DSA.Week4;
+using DSA.Week4.Assignments;
 /*
 Console.WriteLine("Unio Find Test");
 
@@ -73,5 +75,8 @@ Console.ReadLine();
 //CountingInversiont.Run();
 //QuickSort.Run();
 //QuickSelect.Run();
-NutsAndBolts.Run();
+//NutsAndBolts.Run();
+//MinPQ<int>.Run();
+//DynamicMedian.Run();
+RandomizedPriorityQueue<int>.Run();
 //QueueClient.Run();
