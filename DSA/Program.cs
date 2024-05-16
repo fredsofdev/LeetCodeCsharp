@@ -9,6 +9,7 @@ using DSA.Week3.Assignment;
 using DSA.Week3.Quicksort;
 using DSA.Week4;
 using DSA.Week4.Assignments;
+using DSA.Week4.BST;
 /*
 Console.WriteLine("Unio Find Test");
 
@@ -78,5 +79,6 @@ Console.ReadLine();
 //NutsAndBolts.Run();
 //MinPQ<int>.Run();
 //DynamicMedian.Run();
-RandomizedPriorityQueue<int>.Run();
+//RandomizedPriorityQueue<int>.Run();
+MorrisBST.Run();
 //QueueClient.Run();
