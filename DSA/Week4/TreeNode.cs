@@ -19,5 +19,19 @@ internal class TreeNode
         this.key = key;
         this.val = val;
     }
-    
+}
+
+internal class TreeNode<Key, Value>
+{
+
+    public Key key;
+    public Value val;
+    public TreeNode<Key, Value>? left;
+    public TreeNode<Key, Value>? right;
+
+    public TreeNode(Key key, Value val)
+    {
+        this.key = key;
+        this.val = val;
+    }
 }
