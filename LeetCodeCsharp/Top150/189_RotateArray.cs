@@ -27,6 +27,12 @@ internal class _189_RotateArray
 
     public void Rotate2(int[] nums, int k)
     {
+        if (nums.Length == 1) return;
+        if (nums.Length < k)
+        {
+            Rotate2(nums, k);
+            return;
+        }
         Array.Reverse(nums);
         Array.Reverse(nums,0,k);
         Array.Reverse(nums,k,nums.Length - k);
