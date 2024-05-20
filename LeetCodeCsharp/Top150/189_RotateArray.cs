@@ -25,6 +25,7 @@ internal class _189_RotateArray
         nums[0] = h;
     }
 
+    //45 minutes
     public void Rotate2(int[] nums, int k)
     {
         if (nums.Length == 1) return;
