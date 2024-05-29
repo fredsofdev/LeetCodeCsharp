@@ -36,4 +36,5 @@ internal class _30_Substring_with_Concatenation_of_All_Words
         }
         return result;
     }
+
 }
