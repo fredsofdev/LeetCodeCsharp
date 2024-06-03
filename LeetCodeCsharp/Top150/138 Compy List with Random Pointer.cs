@@ -8,7 +8,7 @@ namespace LeetCodeCsharp.Top150;
 //Medium
 internal class _138_Compy_List_with_Random_Pointer
 {
-    // 60 minutes
+    
     public class Node
     {
         public int val;
@@ -22,7 +22,7 @@ internal class _138_Compy_List_with_Random_Pointer
             random = null;
         }
     }
-
+    // 60 minutes
     public Node CopyRandomList(Node head)
     {
         Dictionary<Node, Node> pair = new();
@@ -44,5 +44,26 @@ internal class _138_Compy_List_with_Random_Pointer
         }
 
         return copy.next;
+    }
+
+    // optimized
+    public Node CopyRandomList2(Node head)
+    {
+        Dictionary<Node, Node> pair = new();
+        Node curr = head;
+        while (curr != null)
+        {
+            pair[curr] = new Node(curr.val);
+            curr = curr.next;
+        }
+
+        curr = head;
+        while (curr != null)
+        {
+            pair[curr].next = curr.next != null ? pair[curr.next]: null;
+            pair[curr].random = curr.random != null ? pair[curr.random] : null;
+        }
+
+        return pair[head];
     }
 }
