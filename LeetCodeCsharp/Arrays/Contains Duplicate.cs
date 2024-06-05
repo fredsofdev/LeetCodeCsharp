@@ -24,6 +24,7 @@ namespace LeetCodeCsharp.Arrays
             foreach(int num in nums)
             {
                 if (cont.Count > k) cont.RemoveAt(0);
+
                 if (cont.Contains(num)) return true;
                 else cont.Add(num);
             }
