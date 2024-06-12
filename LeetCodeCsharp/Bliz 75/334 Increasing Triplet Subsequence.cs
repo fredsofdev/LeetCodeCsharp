@@ -10,20 +10,13 @@ internal class _334_Increasing_Triplet_Subsequence
 {
     public bool IncreasingTriplet(int[] nums)
     {
-        Stack<int> stack = new Stack<int>();
-        stack.Push(nums[0]);
-        for(int i  = 0; i<nums.Length; i++)
+        if(nums.Length < 3) return false;
+        int first = int.MaxValue, second = int.MinValue;
+        foreach (int num in nums)
         {
-            if (stack.Peek() < nums[i])
-            {
-                stack.Push(nums[i]);
-            }
-            else
-            {
-                while (stack.TryPeek(out int val) && val >= nums[i]) stack.Pop();
-                stack.Push(nums[i]);
-            }
-            if (stack.Count == 3) return true;
+            if (num <= first) first = num;
+            else if (num <= second) second = num;
+            else return true;
         }
         return false;
     }
