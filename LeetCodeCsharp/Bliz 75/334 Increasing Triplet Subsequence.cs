@@ -11,7 +11,7 @@ internal class _334_Increasing_Triplet_Subsequence
     public bool IncreasingTriplet(int[] nums)
     {
         if(nums.Length < 3) return false;
-        int first = int.MaxValue, second = int.MinValue;
+        int first = int.MaxValue, second = int.MaxValue;
         foreach (int num in nums)
         {
             if (num <= first) first = num;
