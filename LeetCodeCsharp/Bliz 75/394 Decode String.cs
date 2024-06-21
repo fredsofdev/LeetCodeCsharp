@@ -5,29 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LeetCodeCsharp.Bliz_75;
-
+//Medium
 internal class _394_Decode_String
 {
+    //20 minutes, solved after getting some hint
     public string DecodeString(string s)
     {
-        Stack<string> enStack = new();
-        Stack<int> intStack = new();
-        string result = "";
-        int i = 0;
-        while(i < s.Length)
+        Stack<string> stack = new();
+
+        foreach(char c in s)
         {
-            string num = "";
-            while (i < s.Length && char.IsDigit(s[i])) num+=s[i++];
-            if (int.TryParse(num, out int k)) intStack.Push(k);
-
-            string encode = "";
-            while (i < s.Length && char.IsLetter(s[i])) encode += s[i++];
-            if(encode != "") enStack.Push(encode);
-
-            if (s[i] == '[' && i != s.Length-1)
+            if(c != ']')
             {
-                i++;
-                continue;
+                stack.Push(c.ToString());
             }
 
             int times = 1;
@@ -38,22 +28,71 @@ internal class _394_Decode_String
             if (enStack.Count == 0) result += decode;
             else
             {
-                decode = enStack.Pop() + decode;
-                enStack.Push(decode);
+                StringBuilder str = new();
+                while(stack.Peek() != "[")
+                {
+                    str.Insert(0, stack.Pop());
+                }
+                if(stack.Peek() == "[") stack.Pop();
+                Console.Write(str.ToString());
+                StringBuilder numStr = new();
+                while (stack.TryPeek(out string n) && char.IsDigit(n[0]))
+                {
+                    numStr.Insert(0, stack.Pop());
+                }
+
+                int k = int.Parse(numStr.ToString());
+                string temp = str.ToString();
+                while(--k > 0) str.Append(temp);
+                stack.Push(str.ToString());
             }
-            i++;
         }
 
-        return enStack.Pop();
+        StringBuilder result = new();
+        while(stack.Count > 0)
+        {
+            result.Insert(0, stack.Pop());
+        }
+        return result.ToString();
+    }
+
+    //Failed to solve
+    public string DecodeString2(string s)
+    {
+        Stack<int> st = new();
+        Stack<StringBuilder> st1 = new();
+        StringBuilder sb = new StringBuilder();
+        int n = 0;
+
+        foreach (char c in s)
+        {
+            if (char.IsDigit(c))
+            {
+                n = n * 10 + (c - '0');
+            }
+            else if (c == '[')
+            {
+                st.Push(n);
+                n = 0;
+                st1.Push(sb);
+                sb = new StringBuilder();
+            }
+            else if (c == ']')
+            {
+                int k = st.Pop();
+                StringBuilder temp = sb;
+                sb = st1.Pop();
+                while (k-- > 0)
+                {
+                    sb.Append(temp);
+                }
+            }
+            else
+            {
+                sb.Append(c);
+            }
+        }
+
+        return sb.ToString();
     }
 }
-
-
-//Two Stacks for ecoded_string and k interger.
-
-//Iterate through input string by each chars.
-
-//Through the iteration I push ints and chars to stacks respectively.
-
-//then i will start to pop them when I have closing bracket chars.
-
