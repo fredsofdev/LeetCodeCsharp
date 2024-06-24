@@ -19,6 +19,13 @@ internal class _394_Decode_String
             {
                 stack.Push(c.ToString());
             }
+
+            int times = 1;
+            if(intStack.Count > 0) times = intStack.Pop();
+
+            string decode = enStack.Pop();
+            while (times > 0) decode += decode;
+            if (enStack.Count == 0) result += decode;
             else
             {
                 StringBuilder str = new();
