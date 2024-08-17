@@ -21,11 +21,11 @@ internal class _394_Decode_String
             }
 
             int times = 1;
-            if(intStack.Count > 0) times = intStack.Pop();
+            if(stack.Count > 0) times = stack.Pop();
 
-            string decode = enStack.Pop();
+            string decode = stack.Pop();
             while (times > 0) decode += decode;
-            if (enStack.Count == 0) result += decode;
+            if (stack.Count == 0) result += decode;
             else
             {
                 StringBuilder str = new();
